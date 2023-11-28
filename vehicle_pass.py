@@ -1,6 +1,6 @@
 class Pass():
-    def __init__(self, date, time, registration_number):
+    def __init__(self, date, time, registrationNumber):
         self.date = date
         self.time = time
-        self.registration_number = registration_number
+        self.registration_number = registrationNumber
     

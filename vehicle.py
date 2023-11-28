@@ -1,5 +1,6 @@
 class Vehicle(object):
-  def __init__(self, brand, owner, model, category = {"el":False, "gas":False, "diesel":False}) -> None:
+  def __init__(self, registrationNumber, brand, owner, model, category) -> None:
+    self.registrationNumber = registrationNumber
     self.brand = brand
     self.owner = owner
     self.model = model
