@@ -28,11 +28,11 @@ for entry in vehicleData:
     brandModel = data[1].split(" ")
     brand = brandModel[0]
     model = brandModel[1]
-    newVehicle = Vehicle(str(data[0]), brand, str(data[4]), model, str(data[2]))
-    vehicleRegister[newVehicle.registrationNumber] = newVehicle
+    newVehicle = Vehicle(brand, str(data[4]), model, str(data[2]))
+    vehicleRegister[data[0]] = newVehicle
 
 for pass1 in passes:
-    print(pass1.registrationNumber)
+    print(pass1.registration_number)
 
 print(vehicleRegister.keys())
 
