@@ -3,3 +3,4 @@ class Pass():
         self.date = date
         self.time = time
         self.registration_number = registration_number
+    
