@@ -1,8 +1,5 @@
 class Pass(object):
-    """A datastructure for storing a pass
-
-    Longer class information....
-    Longer class information....
+    """A datastructure for storing a passage
 
     Attributes:
         date (str): The date of the pass.

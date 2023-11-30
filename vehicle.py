@@ -1,9 +1,6 @@
 class Vehicle(object):
   """A data structure for storing information about a vehicle.
 
-  Longer class information....
-  Longer class information....
-
   Attributes:
     brand (str): The brand of the vehicle.
     owner (str): The owner of the vehicle.
