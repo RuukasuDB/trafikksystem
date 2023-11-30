@@ -21,7 +21,6 @@ class TrafficSystem:
         data = read_data(data_path)
         self.vehicle_register = data[0]
         self.passes = data[1]
-        pass
 
     def most_active_hour(self):
         """Finds the date where most passes occured, and the hour of this date in which the most passes occured.
@@ -62,7 +61,7 @@ def read_data(file_path: str):
     """
     vehicle_register = {}
     passes = []
-    data = open(file_path, 'r')
+    data = open(file_path, 'r', encoding='utf-8')
     lines = data.readlines()
 
     #linje 1 med passering
@@ -90,13 +89,14 @@ def read_data(file_path: str):
 
     return (vehicle_register, passes)
 
-#initialiserer trafikksystemet
-system = TrafficSystem('input.txt')
+if __name__ == '__main__':
+    #initialiserer trafikksystemet
+    system = TrafficSystem('input.txt')
 
-most_active_hour = system.most_active_hour()
-vehicle = system.most_active_vehicle()
+    most_active_hour = system.most_active_hour()
+    vehicle = system.most_active_vehicle()
 
-#formaterer dato og time
-date = most_active_hour.strftime('%Y-%m-%d')
-hour = most_active_hour.strftime('%H')
-print(f"Datoen med flest passeringer var {date}, og timen på den datoen med flest passeringer var time {hour}. \nKjøretøyet som passerte flest ganger var en {vehicle.brand} {vehicle.model} ({vehicle.category}) eid av {vehicle.owner}.")
+    #formaterer dato og time
+    date = most_active_hour.strftime('%Y-%m-%d')
+    hour = most_active_hour.strftime('%H')
+    print(f"Datoen med flest passeringer var {date}, og timen på den datoen med flest passeringer var time {hour}. \nKjøretøyet som passerte flest ganger var en {vehicle.brand} {vehicle.model} ({vehicle.category}) eid av {vehicle.owner}.")
