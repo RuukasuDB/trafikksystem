@@ -7,7 +7,7 @@ class TrafficSystem:
     """A data structure for storing the current state of the traffic system.
 
     Attributes:
-        vehicle_register (dict): Dictionary of all vehicles with corresponding registration
+        vehicle_register (Dict): Dictionary of all vehicles with corresponding registration
         numbers as keys.
 
         passes (list): List of all recorded vehicle passes.       
@@ -21,9 +21,8 @@ class TrafficSystem:
         data = read_data(data_path)
         self.vehicle_register = data[0]
         self.passes = data[1]
-        pass
 
-    def most_active_hour(self):
+    def most_active_hour(self) -> object:
         """Finds the date where most passes occured, and the hour of this date in which the most passes occured.
         
         Returns:
@@ -38,7 +37,7 @@ class TrafficSystem:
         
         return time
 
-    def most_active_vehicle(self):
+    def most_active_vehicle(self) -> object:
         """Finds the vehicle which was recorded the most times.
 
         Returns:
@@ -48,7 +47,7 @@ class TrafficSystem:
 
         return self.vehicle_register[most_common_reg_number]
         
-def read_data(file_path: str):
+def read_data(file_path: str) -> list:
     """Reads vehicle- and pass data from a .txt file.
 
     Args:
@@ -85,6 +84,7 @@ def read_data(file_path: str):
         brand_and_model = data[1].split(" ")
         brand = brand_and_model[0]
         model = brand_and_model[1]
+        #merke, eier, modell, kategori
         new_vehicle = Vehicle(brand, str(data[4]), model, str(data[2]))
         vehicle_register[data[0]] = new_vehicle
 
@@ -99,4 +99,5 @@ vehicle = system.most_active_vehicle()
 #formaterer dato og time
 date = most_active_hour.strftime('%Y-%m-%d')
 hour = most_active_hour.strftime('%H')
+
 print(f"Datoen med flest passeringer var {date}, og timen på den datoen med flest passeringer var time {hour}. \nKjøretøyet som passerte flest ganger var en {vehicle.brand} {vehicle.model} ({vehicle.category}) eid av {vehicle.owner}.")
