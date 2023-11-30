@@ -1,5 +1,5 @@
 class Vehicle(object):
-  """A datastructure for storing information about a vehicle.
+  """A data structure for storing information about a vehicle.
 
   Longer class information....
   Longer class information....

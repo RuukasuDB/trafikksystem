@@ -1,5 +1,5 @@
 class Pass(object):
-    """A datastructure for storing a pass
+    """A data structure for storing a pass
 
     Longer class information....
     Longer class information....
@@ -23,4 +23,3 @@ class Pass(object):
         self.date = date
         self.time = time
         self.registration_number = registration_number
-    
