@@ -10,10 +10,7 @@ class TrafficSystem:
         vehicle_register (dict): Dictionary of all vehicles with corresponding registration
         numbers as keys.
 
-        passes (list): List of all recorded vehicle passes.
-    
-    Methods:
-        
+        passes (list): List of all recorded vehicle passes.       
     """
     def __init__(self, data_path: str) -> None:
         """Initializes object with the given attributes.
@@ -31,8 +28,6 @@ class TrafficSystem:
         
         Returns:
             hour (datetime): The most common pass date and hour.
-    
-
         """
         most_common_date = Counter([x.date for x in self.passes]).most_common()[0][0]
         most_common_hour = Counter([x.time for x in self.passes if x.date == most_common_date]).most_common()[0][0]
@@ -44,7 +39,13 @@ class TrafficSystem:
         return time
 
     def most_active_vehicle(self):
+        """Finds the vehicle which was recorded the most times.
+
+        Returns:
+            vehicle (Vehicle): The vehicle with the highest number of occurences in the list of passes.
+        """
         most_common_reg_number = Counter([x.registration_number for x in self.passes]).most_common()[0][0]
+
         return self.vehicle_register[most_common_reg_number]
         
 def read_data(file_path: str):
@@ -54,10 +55,10 @@ def read_data(file_path: str):
         file_path (str): The location of the file. 
 
     Returns:
-        vehicle_register (dict): Register of all vehicles with corresponding registration numbers
+        vehicle_register (dict): Dictionary of all vehicles with corresponding registration numbers
         as keys.
 
-        passes (list): Register of all passes.
+        passes (list): List of all passes.
     """
     vehicle_register = {}
     passes = []
