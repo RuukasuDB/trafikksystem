@@ -1,5 +1,5 @@
 class Pass(object):
-    """A data structure for storing a pass
+    """A datastructure for storing a pass
 
     Longer class information....
     Longer class information....
